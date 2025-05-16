@@ -50,12 +50,12 @@ class MyProject(QMainWindow, FORM_CLASS):
     def select_listSowar(self):
         global NomSorat   
        	NomSorat=str(self.listSowar.currentItem().text())
-        self.df = pd.read_csv('./allFiles/Coran/'+NomSorat+'.csv', encoding='utf8')
+        self.df = pd.read_csv('./allFiles/'+NomSorat+'.csv', encoding='utf8')
         self.openFile() 
                            
     def openFile(self): 
         global NomSorat        
-        f = open(('./allFiles/CoranTXT/'+NomSorat+'.txt'), 'r')          
+        f = open(('./allFiles/'+NomSorat+'.txt'), 'r')          
         with f:
             
             data = f.read()
